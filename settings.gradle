@@ -1,0 +1,5 @@
+include 'easyrelease'
+    
+// this is done only to customize published artifact id
+project(':easyrelease').projectDir = new File(settingsDir, 'plugin')
+    
