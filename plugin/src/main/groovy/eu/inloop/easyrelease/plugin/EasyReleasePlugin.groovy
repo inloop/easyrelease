@@ -11,6 +11,17 @@ class EasyReleasePlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
 
+        project.android.signingConfigs {
+           release {
+           }
+        }
+
+        project.android.buildTypes {
+           release {
+               signingConfig project.android.signingConfigs.release
+           }
+        }
+
         def taskName = 'validateReleaseSigning'
             
         // TODO: I wanted to use this to detect whether $taskName task was found, 
