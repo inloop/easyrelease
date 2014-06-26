@@ -28,8 +28,9 @@ class EasyReleaseTask extends DefaultTask {
     
     void setupSigningConfig() {
         def projectDir = project.projectDir
-        def propFile = new File("$projectDir/signing.properties")
-        println "$TAG Reading signing info from $projectDir/signing.properties"
+        def propFileName = 'easyrelease.properties'
+        def propFile = new File("$projectDir/$propFileName")
+        println "$TAG Reading signing info from $projectDir/$propFileName"
         if (propFile.canRead()) {
             def props = new Properties()
             props.load(new FileInputStream(propFile))
@@ -40,7 +41,7 @@ class EasyReleaseTask extends DefaultTask {
             buildType.keyAlias = props["KEY_ALIAS"]
             buildType.keyPassword = props["KEY_PASSWORD"]
         } else {
-            System.err.println "$TAG ERROR: Missing $projectDir/signing.properties"
+            System.err.println "$TAG ERROR: Missing $projectDir/$propFileName"
         }
     }
     
