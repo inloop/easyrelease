@@ -6,43 +6,40 @@ import org.gradle.api.tasks.TaskContainer
 
 class EasyReleasePlugin implements Plugin<Project> {
 
-    static final String TAG = '[easyrelease]'
-        
     @Override
     void apply(Project project) {
 
-        project.android.signingConfigs {
-           release {
-           }
-        }
-
-        project.android.buildTypes {
-           release {
-               signingConfig project.android.signingConfigs.release
-           }
-        }
-
-        def taskName = 'validateReleaseSigning'
-            
-        // TODO: I wanted to use this to detect whether $taskName task was found, 
-        // but for some reason, whenReady is not called.
-        // It is not possible to put that check simply after whenTaskAdded, because it is async
+        // Setup properties for our customization, otherwise zipaling will not start
         
-        // project.gradle.taskGraph.whenReady { taskGraph ->
-        // }
-            
-        project.tasks.whenTaskAdded { task ->
-            if (task.name == taskName) {
-                project.task('easyRelease', type: EasyReleaseTask) {
+        project.android {
+            signingConfigs {
+                release {
+                    storeFile = project.file('.')
+                    keyAlias = ''
+                    storePassword = ''
+                    keyPassword = ''
                 }
-                task.dependsOn project.tasks.getByName('easyRelease')
-                println "$TAG Signing task added succesfuly."
             }
         }
-        
-        
+
+        project.android {
+            buildTypes {
+                release {
+                    debuggable false
+                    zipAlign true
+                    signingConfig project.android.signingConfigs.release
+                }
+            }
+        }
+
+        // change the apk file name and load signing properties
+            
+        project.afterEvaluate {
+            Util.setApkName(project)
+            Util.loadProperties(project)
+        }
+
     }
 
-    
 }
 
