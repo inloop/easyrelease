@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        maven { url "file://${System.getProperty('user.home')}/.m2/repository/" }
+    }
+    dependencies {
+        classpath 'eu.inloop:easyrelease:0.1.4'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'easyrelease'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "inloop.eu.easyrelease.sample"
+        minSdkVersion 14
+        targetSdkVersion 20
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+}
