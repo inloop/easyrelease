@@ -9,8 +9,8 @@ class Util {
      */
     static def setApkName(project) {
         project.android.applicationVariants.all { variant ->
-            def versionName = getVersionName()
-            def versionCode = getVersionCode()
+            def versionName = getVersionName(project)
+            def versionCode = getVersionCode(project)
             def fileName = "$project.name-$variant.name-$versionName-${versionCode}.apk"
             variant.outputFile = new File(variant.outputFile.parent, fileName)
             println "$TAG Setting $variant.name variant apk name to $fileName"
@@ -39,7 +39,7 @@ class Util {
     static def getVersionCode(project) {
         def androidManifestPath = project.android.sourceSets.main.manifest.srcFile
         def manifestText = project.file(androidManifestPath).getText()
-        def patternVersionNumber = java.util.regex.Pattern.compile("versionName=\"(\\d+)\"")
+        def patternVersionNumber = java.util.regex.Pattern.compile("versionCode=\"(\\d+)\"")
         def matcherVersionNumber = patternVersionNumber.matcher(manifestText)
         matcherVersionNumber.find()
         def version = Integer.parseInt(matcherVersionNumber.group(1))
