@@ -7,7 +7,11 @@ It does following in `Project.afterEvaluate()`:
 
 * reads `versionName` and `versionCode` from AndroidManifest.xml
 * sets each build variant's output file name to *project_name-${variant}-${versionName}-${versionCode}.apk*
-* updates release signingConfig with proper certificate path, kaystore password, key alias and key password defined in property file
+* updates release signingConfig with proper certificate path, keystore password, key alias and key password defined in property file
+
+### Status
+
+Plugin is in early stages and we are looking for a feedback (issues, pull requests). It is based on what we used in our applications and works well for us, but we are sure there are other use-cases or ways it can be improved.
 
 ### Usage
 
