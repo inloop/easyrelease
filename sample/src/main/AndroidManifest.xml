@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="inloop.eu.easyrelease.sample" 
-    versionName="1.2.3" versionCode="45">
+    android:versionName="1.2.3" android:versionCode="45">
 
     <application
         android:allowBackup="true"

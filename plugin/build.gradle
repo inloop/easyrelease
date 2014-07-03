@@ -11,8 +11,4 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
-uploadArchives {
-    repositories {
-        mavenLocal()
-    }
-}
+apply from: 'https://raw.github.com/martinadamek/gradle-mvn-push/master/gradle-mvn-push.gradle'
