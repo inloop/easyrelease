@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        maven { url "file://${System.getProperty('user.home')}/.m2/repository/" }
+        mavenCentral()
     }
     dependencies {
         classpath 'eu.inloop:easyrelease:0.1.4'
