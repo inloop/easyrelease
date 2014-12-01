@@ -19,6 +19,8 @@ android {
         applicationId "inloop.eu.easyrelease.sample"
         minSdkVersion 14
         targetSdkVersion 21
+        versionName = "2.5.7"
+        versionCode = 6678
     }
 }
 

@@ -9,12 +9,14 @@ class Util {
      */
     static def setApkName(project) {
         project.android.applicationVariants.all { variant ->
-            def versionName = getVersionName(project)
-            def versionCode = getVersionCode(project)
+
+            // first check version code and name from Gradle build script, then from AndroidManifest.xml
+            def versionCode = variant.versionCode ? variant.versionCode : getVersionCode(project)
+            def versionName = variant.versionName ? variant.versionName : getVersionName(project)
+
             def fileName = "$project.name-$variant.name-$versionName-${versionCode}.apk"
             variant.outputs.each { output ->
                 output.outputFile = new File(output.outputFile.parent, fileName)
-                println "### $output.name"
                 println "$TAG Setting $output.name variant output name to $fileName"
             }
         }
