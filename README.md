@@ -15,7 +15,7 @@ It does following in `Project.afterEvaluate()`:
 
 ### Status
 
-Plugin is in early stages. It is based on what we used in our applications and works well for us, but we are sure there are other use-cases or ways it can be improved. It is already available from Maven Central Repository.
+See the [CHANGELOG](CHANGELOG.md). Plugin is in early stages. It is based on what we used in our applications and works well for us, but we are sure there are other use-cases or ways it can be improved. It is already available from Maven Central Repository.
 
 ### Usage
 
