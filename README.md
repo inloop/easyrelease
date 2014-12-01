@@ -7,7 +7,7 @@ It does following in `Project.afterEvaluate()`:
 
 * reads `versionName` and `versionCode` from AndroidManifest.xml (we are going to add support for buildscript-based values)
 * sets each build variant's output file name to *project_name-${variant}-${versionName}-${versionCode}.apk*
-* sets followinf release buildType properties:
+* sets following release buildType properties:
   * `zipAlignEnabled true`
   * `minifyEnabled true`
   * `shrinkResources true`
