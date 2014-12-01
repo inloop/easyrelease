@@ -3,16 +3,16 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.1'
+        classpath 'com.android.tools.build:gradle:1.0.0-rc1'
     }
 }
 
 ext {
-    compileSdkVersion = 19
-    buildToolsVersion = "20"
+    compileSdkVersion = 21
+    buildToolsVersion = "21.1.1"
 }
 
 allprojects {
     group = 'eu.inloop'
-    version = '0.1.4'
+    version = VERSION_NAME
 }

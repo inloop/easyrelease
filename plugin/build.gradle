@@ -11,4 +11,16 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
+// use ./gradlew uploadArchives to upload to remote Maven repo
+
 apply from: 'https://raw.github.com/martinadamek/gradle-mvn-push/master/gradle-mvn-push.gradle'
+
+// comment previous line and uncomment following section to use ./gradlew uploadArchives to upload to local Maven repo
+
+// uploadArchives {
+//     repositories {
+//         mavenDeployer {
+//             repository(url: "file://${System.env.HOME}/.m2/repository")
+//         }
+//     }
+// }

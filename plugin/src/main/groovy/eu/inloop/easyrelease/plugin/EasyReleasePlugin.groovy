@@ -9,7 +9,7 @@ class EasyReleasePlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
 
-        // Setup properties for our customization, otherwise zipaling will not start
+        // Setup properties for our customization, otherwise zipalign will not start
         
         project.android {
             signingConfigs {
@@ -26,7 +26,9 @@ class EasyReleasePlugin implements Plugin<Project> {
             buildTypes {
                 release {
                     debuggable false
-                    zipAlign true
+                    zipAlignEnabled true
+                    minifyEnabled true
+                    shrinkResources true
                     signingConfig project.android.signingConfigs.release
                 }
             }

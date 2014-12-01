@@ -12,8 +12,11 @@ class Util {
             def versionName = getVersionName(project)
             def versionCode = getVersionCode(project)
             def fileName = "$project.name-$variant.name-$versionName-${versionCode}.apk"
-            variant.outputFile = new File(variant.outputFile.parent, fileName)
-            println "$TAG Setting $variant.name variant apk name to $fileName"
+            variant.outputs.each { output ->
+                output.outputFile = new File(output.outputFile.parent, fileName)
+                println "### $output.name"
+                println "$TAG Setting $output.name variant output name to $fileName"
+            }
         }
     }
 
