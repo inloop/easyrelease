@@ -11,6 +11,9 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
 // use ./gradlew uploadArchives to upload to remote Maven repo
 
 apply from: 'https://raw.github.com/martinadamek/gradle-mvn-push/master/gradle-mvn-push.gradle'
