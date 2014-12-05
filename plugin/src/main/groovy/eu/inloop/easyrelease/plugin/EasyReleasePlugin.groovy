@@ -27,8 +27,6 @@ class EasyReleasePlugin implements Plugin<Project> {
                 release {
                     debuggable false
                     zipAlignEnabled true
-                    minifyEnabled true
-                    shrinkResources true
                     signingConfig project.android.signingConfigs.release
                 }
             }

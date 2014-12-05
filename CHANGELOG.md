@@ -1,3 +1,15 @@
+## 0.2.2 (2014-12-05)
+
+Features:
+
+  - removes `minifyEnabled` and `shrinkResources` release properties (seems more reasonable to handle by actual client projects, especially for older projects, that didn't have ProGuard configured properly)
+
+## 0.2.1 (2014-12-03)
+
+Features:
+
+  - sets Java 7 source and target compatibility
+
 ## 0.2.0 (2014-12-01)
 
 Features:

@@ -9,8 +9,6 @@ It does following in `Project.afterEvaluate()`:
 * sets each build variant's output file name to *project_name-${variant}-${versionName}-${versionCode}.apk*
 * sets following release buildType properties:
   * `zipAlignEnabled true`
-  * `minifyEnabled true`
-  * `shrinkResources true`
 * updates release signingConfig with proper certificate path, keystore password, key alias and key password defined in property file
 
 ### Status
