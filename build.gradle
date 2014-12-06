@@ -7,11 +7,6 @@ buildscript {
     }
 }
 
-ext {
-    compileSdkVersion = 21
-    buildToolsVersion = "21.1.1"
-}
-
 allprojects {
     group = 'eu.inloop'
     version = VERSION_NAME
