@@ -5,7 +5,7 @@ Gradle plugin for Android projects that helps with signing release APKs.
 
 It does following in `Project.afterEvaluate()`:
 
-* reads `versionName` and `versionCode` from AndroidManifest.xml (we are going to add support for buildscript-based values)
+* reads `versionName` and `versionCode` from build.gradle and if not defined there, then it's taken from AndroidManifest.xml
 * sets each build variant's output file name to *project_name-${variant}-${versionName}-${versionCode}.apk*
 * sets following release buildType properties:
   * `zipAlignEnabled true`
