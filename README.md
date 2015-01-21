@@ -24,7 +24,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'eu.inloop:easyrelease:0.2.0'
+        classpath 'eu.inloop:easyrelease:0.2.2'
     }
 }
 apply plugin: 'easyrelease'
