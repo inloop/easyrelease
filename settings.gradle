@@ -1,6 +1,6 @@
-include 'easyrelease'
+include 'easyrelease-lib'
 include 'sample'
     
 // this is done only to customize published artifact id
-project(':easyrelease').projectDir = new File(settingsDir, 'plugin')
+//project(':easyrelease').projectDir = new File(settingsDir, 'plugin')
     

@@ -1,8 +1,15 @@
+## 0.2.3 (2015-11-03)
+
+Features:
+
+  - updated build tools version to 1.3.0 and altered the folder structure to comply with build tools requirements
+  - it is now possible to set a custom output file naming convention using available parameters in the easyrelease.properties
+
 ## 0.2.2 (2014-12-05)
 
 Features:
 
-  - removes `minifyEnabled` and `shrinkResources` release properties (seems more reasonable to handle by actual client projects, especially for older projects, that didn't have ProGuard configured properly)
+  - removed `minifyEnabled` and `shrinkResources` release properties (seems more reasonable to handle by actual client projects, especially for older projects, that didn't have ProGuard configured properly)
 
 ## 0.2.1 (2014-12-03)
 

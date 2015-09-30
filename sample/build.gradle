@@ -4,7 +4,7 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath 'eu.inloop:easyrelease:0.2.0'
+        classpath 'eu.inloop:easyrelease-lib:0.2.3'
     }
 }
 
@@ -12,8 +12,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'easyrelease'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "inloop.eu.easyrelease.sample"
