@@ -1,8 +1,6 @@
 package eu.inloop.easyrelease.plugin
-
-import org.gradle.api.Project
 import org.gradle.api.Plugin
-import org.gradle.api.tasks.TaskContainer
+import org.gradle.api.Project
 
 class EasyReleasePlugin implements Plugin<Project> {
 
